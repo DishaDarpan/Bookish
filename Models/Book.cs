@@ -7,8 +7,11 @@ namespace bookish
         public string Author { get; set; }
         public string ImageUrl { get; set; }
 
-        public string Blurb { get; set; }
-
+        public Book(string title, string author, string imageUrl)
+        {
+            Title = title;
+            Author = author;
+            ImageUrl = imageUrl;
+        }
     }
-
 }

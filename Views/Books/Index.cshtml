@@ -5,10 +5,15 @@
 
 <div class="text-center">
     <h1 class="display-4">List of Books</h1>
+
     <ul>
         @foreach (Book book in Model)
         {
-            <li>@book.Title</li>
+            <li>
+                <p>@book.Title</p>
+                <p>@book.Author</p>
+                <img src=@book.ImageUrl />
+            </li>
             
         }
     </ul>
