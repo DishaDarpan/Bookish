@@ -4,6 +4,8 @@ using bookish.Models;
 
 namespace bookish.Controllers;
 
+[Route("books")]
+
 public class BooksController : Controller
 {
     private readonly ILogger<BooksController> _logger;
@@ -20,23 +22,24 @@ public class BooksController : Controller
         return View(books);
     }
 
-    [HttpGet]
-    public IActionResult Add()
+    [HttpPost("")]
+    public IActionResult Create([FromForm] Book newBook)
+    {   
+       var context = new BookishContext();
+       var addedEntity = context.Books.Add(newBook);
+
+        context.SaveChanges();
+
+        Book addedBook = addedEntity.Entity;
+
+        return RedirectToAction("Index");
+
+    }
+
+     [HttpGet("add")]
+    public IActionResult CreateForm()
     {   
         return View();
     }
-
-    [HttpPost]
-    public IActionResult Add(string title, string author, string imageUrl)
-    {   
-        using (var context = new BookishContext()) {
-            var book = new Book(title, author, imageUrl);
-
-            context.Books.Add(book);
-            context.SaveChanges();                
-            }
-        return View();
-    }
-
     
 }
