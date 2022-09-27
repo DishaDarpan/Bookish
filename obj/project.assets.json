@@ -2050,19 +2050,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dispan\\.nuget\\packages\\": {}
+    "C:\\Users\\nicosm\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Training2\\bookish\\Bookish\\bookish.csproj",
+      "projectUniqueName": "C:\\Users\\nicosm\\work\\c#\\bookish\\bookish\\bookish.csproj",
       "projectName": "bookish",
-      "projectPath": "C:\\Training2\\bookish\\Bookish\\bookish.csproj",
-      "packagesPath": "C:\\Users\\dispan\\.nuget\\packages\\",
-      "outputPath": "C:\\Training2\\bookish\\Bookish\\obj\\",
+      "projectPath": "C:\\Users\\nicosm\\work\\c#\\bookish\\bookish\\bookish.csproj",
+      "packagesPath": "C:\\Users\\nicosm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nicosm\\work\\c#\\bookish\\bookish\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dispan\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\nicosm\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"

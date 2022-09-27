@@ -1,4 +1,6 @@
 @model Book
+@ViewBag 
+
 @{
     ViewData["Title"] = "Add Book";
 }
@@ -12,7 +14,7 @@
         </label>
         <label>
             Author
-            <input asp-for="Author" type="text">
+            <select asp-for="Authors" asp-items="@ViewBag.Authors"></select> 
         </label>
         <label>
             Image URL

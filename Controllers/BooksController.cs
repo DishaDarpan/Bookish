@@ -1,6 +1,9 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using bookish.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace bookish.Controllers;
 
@@ -18,7 +21,10 @@ public class BooksController : Controller
     public IActionResult Index()
     {
         var context = new BookishContext();
-        List<Book> books = context.Books.ToList();
+        List<Book> books = context
+                                .Books
+                                .Include(b => b.Authors)
+                                .ToList();
         return View(books);
     }
 
@@ -39,6 +45,14 @@ public class BooksController : Controller
      [HttpGet("add")]
     public IActionResult CreateForm()
     {   
+        var context = new BookishContext();
+        List<Author> authors = context.Authors.ToList();
+        List<SelectListItem> selectListAuthors = 
+            authors.Select(
+                a => new SelectListItem { Value = a.id.ToString(), Text = a.Name }
+            )
+            .ToList();
+        ViewBag.Authors = selectListAuthors;
         return View();
     }
     

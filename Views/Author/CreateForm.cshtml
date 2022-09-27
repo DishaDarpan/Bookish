@@ -1,0 +1,15 @@
+@model Author
+@{
+    ViewData["Title"] = "Add Author";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Add Author</h1>
+    <form asp-controller="Author" asp-action="Create" method="post">
+        <label>
+            Name
+            <input asp-for="Name" type="text">
+        </label>
+        <input type="submit" value="Add Author">
+    </form>
+</div>
